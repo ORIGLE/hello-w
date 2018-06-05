@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .red{
+        background: red;
+    }
+    .blue{
+        background: blue;
+    }
+    .yellow{
+        background: yellow;
+    }
+    </style>
+</head>
+<body>
+    <input type="button" value="变红">
+    <input type="button" value="变蓝">
+    <input type="button" value="变黄">
+    <script>
+    window.onload=function(){
+        var aBtn=document.getElementsByTagName("input");
+        function show(bg){
+           document.body.style.background=bg;
+        }
+        aBtn[0].onclick=function(){
+            show('red');
+        }
+        aBtn[1].onclick=function(){
+            show('blue');
+        }
+        aBtn[2].onclick=function(){
+            show('yellow');
+        }
+    }
+    </script>
+</body>
+</html>

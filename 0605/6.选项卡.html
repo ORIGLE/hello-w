@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div div{
+        width: 200px;
+        height: 200px;
+        border: 1px solid blue;
+        display: none;
+    }
+    .active{
+        background: blue;
+
+    }
+    </style>
+</head>
+<body>
+    <div id="obox1">
+    <input type="button" value="aaa" class="active">
+    <input type="button" value="bbb">
+    <input type="button" value="ccc">
+    <div style="display: block">111</div>
+    <div>222</div>
+    <div>333</div>
+    </div>
+    <div id="obox2">
+            <input type="button" value="aaa" class="active">
+            <input type="button" value="bbb">
+            <input type="button" value="ccc">
+            <div style="display: block">111</div>
+            <div>222</div>
+            <div>333</div>
+            </div>
+</body>
+<script>
+    
+   function tab(Id){
+        var oBox=document.querySelector(Id);
+        /*错在oBox.document.get....*/
+        var aBtn=oBox.getElementsByTagName("input");
+        var aDiv=oBox.getElementsByTagName("div");
+        for(var i=0;i<aBtn.length;i++){
+            aBtn[i].index=i;
+            aBtn[i].onclick=function(){
+             for(var i=0; i<aBtn.length;i++){
+                 aBtn[i].className='';
+                 aDiv[i].style.display='none';
+
+             }
+             aDiv[this.index].style.display='block';
+             this.className='active';
+         }
+
+        }
+
+    }
+    window.onload=function(){
+        tab('#obox1');
+        tab('#obox2');
+    }
+</script>
+</html>

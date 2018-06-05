@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="变红">
+    <input type="button" value="变蓝">
+    <input type="button" value="变黄">
+    
+</body>
+<script>
+    window.onload=function(){
+        var oBtn=document.getElementsByTagName("input")[0];
+        var oBtn1=document.getElementsByTagName("input")[1];
+        var oBtn2=document.getElementsByTagName("input")[2];
+        oBtn.onclick=function(){
+            document.body.style.background='red';
+        }
+        oBtn1.onclick=function(){
+            document.body.style.background='blue';
+        }
+        oBtn2.onclick=function(){
+            document.body.style.background='yellow';
+        }
+    }
+</script>
+</html>
